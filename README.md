@@ -4,8 +4,10 @@ In this assigment we created a work day scheduler
 
 I used symantic html in conjunction with jQuery to add functionality that allows the user to store new tasks in local storage for a specific time slot they seem fit. 
 
+## link to app 
+https://joeyr1984.github.io/Work-Day-Scheduler/
 
-##An example of the code that allows this functionality
+## An example of the code that allows this functionality
 
 ```javascript
 function saveUserInput(e) {

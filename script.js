@@ -17,6 +17,7 @@ $(document).ready(function () {
         }
         $("#save-button-" + hourFormat).click(saveUserInput);
     });
+    loadSchedule();
 });
 
 function saveUserInput(e) {
@@ -39,9 +40,19 @@ function saveUserInput(e) {
         } else {
             blankSchedule.push(savingEntry);
             localStorage.scheduler = JSON.stringify(blankSchedule);
-            
+
         }
     }
     //console.log(newTask);
 }
+function loadSchedule() {
+    if (typeof (Storage) !== "undefined") {
+        if (localStorage.scheduler) {
+            var todaySchedule = JSON.parse(localStorage.scheduler);
+            todaySchedule.forEach(entry => {
+                $(entry.id).val(entry.taskDescription);
+            });
+        }
 
+    }
+}

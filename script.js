@@ -1,5 +1,5 @@
 
-var timeSlots = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
+var timeSlots = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
 $(document).ready(function () {
     $("#currentDay").html(moment().format("dddd, MMMM Do"));
@@ -23,7 +23,6 @@ $(document).ready(function () {
 function saveUserInput(e) {
     var blankSchedule = [];
     var buttonId = e.currentTarget.id;
-    //console.log(e);
     var buttonIdArray = buttonId.split("-");
     var hourSlot = buttonIdArray[buttonIdArray.length - 1];
     var newTask = $("#new-task-" + hourSlot).val();
@@ -43,7 +42,6 @@ function saveUserInput(e) {
 
         }
     }
-    //console.log(newTask);
 }
 function loadSchedule() {
     if (typeof (Storage) !== "undefined") {
